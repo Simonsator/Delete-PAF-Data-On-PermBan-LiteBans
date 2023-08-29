@@ -1,4 +1,4 @@
-package de.simonsator.partyandfriends.datadeleter.litebans;
+package de.simonsator.partyandfriends.velocity.datadeleter.litebans;
 
 import de.simonsator.partyandfriends.api.pafplayers.PAFPlayerManager;
 import litebans.api.Entry;
