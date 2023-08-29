@@ -1,22 +1,21 @@
 package de.simonsator.partyandfriends.velocity.datadeleter.litebans;
 
-import de.simonsator.partyandfriends.api.events.message.SimpleMessageEvent;
+import com.velocitypowered.api.event.Subscribe;
+import de.simonsator.partyandfriends.velocity.api.events.message.SimpleMessageEvent;
 import litebans.api.Database;
-import net.md_5.bungee.api.plugin.Listener;
-import net.md_5.bungee.event.EventHandler;
 
 import java.net.SocketAddress;
 
-public class LBBungeeMuter implements Listener {
+public class LBBungeeMuter  {
 	private final String MUTED_MESSAGE;
 
 	public LBBungeeMuter(String pMutedMessage) {
 		this.MUTED_MESSAGE = pMutedMessage;
 	}
 
-	@EventHandler
+	@Subscribe
 	public void onPAFChat(SimpleMessageEvent pEvent) {
-		if (Database.get().isPlayerMuted(pEvent.getSender().getUniqueId(), getIP(pEvent.getSender().getPlayer().getSocketAddress()))) {
+		if (Database.get().isPlayerMuted(pEvent.getSender().getUniqueId(), getIP(pEvent.getSender().getPlayer().getRemoteAddress()))) {
 			pEvent.setCancelled(true);
 			pEvent.getSender().sendMessage(MUTED_MESSAGE);
 		}

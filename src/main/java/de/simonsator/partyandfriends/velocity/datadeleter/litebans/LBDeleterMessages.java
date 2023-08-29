@@ -1,8 +1,9 @@
 package de.simonsator.partyandfriends.velocity.datadeleter.litebans;
 
-import de.simonsator.partyandfriends.api.PAFPluginBase;
-import de.simonsator.partyandfriends.utilities.Language;
-import de.simonsator.partyandfriends.utilities.LanguageConfiguration;
+
+import de.simonsator.partyandfriends.velocity.api.PAFPluginBase;
+import de.simonsator.partyandfriends.velocity.utilities.Language;
+import de.simonsator.partyandfriends.velocity.utilities.LanguageConfiguration;
 
 import java.io.File;
 import java.io.IOException;
