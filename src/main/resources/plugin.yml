@@ -1,0 +1,5 @@
+name: Delete-PAF-Data-On-Perm-Ban-LiteBans
+version: ${project.version}
+main: de.simonsator.partyandfriends.datadeleter.litebans.LBDeleterPlugin
+author: Simonsator
+depends: ['PartyAndFriends', 'LiteBans']
