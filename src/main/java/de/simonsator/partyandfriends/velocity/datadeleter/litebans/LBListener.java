@@ -4,11 +4,14 @@ import de.simonsator.partyandfriends.velocity.api.pafplayers.PAFPlayerManager;
 import litebans.api.Entry;
 import litebans.api.Events;
 
+import java.util.UUID;
+
 public class LBListener extends Events.Listener {
 	@Override
 	public void entryAdded(Entry entry) {
-		if (entry.isPermanent() && entry.getType().equals("ban")) {
-			PAFPlayerManager.getInstance().getPlayer(entry.getUuid()).deleteAccount();
+		String stringUUID = entry.getUuid();
+		if (entry.isPermanent() && entry.getType().equals("ban") && stringUUID != null) {
+			PAFPlayerManager.getInstance().getPlayer(UUID.fromString(stringUUID)).deleteAccount();
 		}
 	}
 }
